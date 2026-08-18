@@ -1,0 +1,76 @@
+:root{
+  --main-color : #0090f0;
+  --p_color : #7b7b7b;
+  --bg-color : #f3f3f3;
+  --white-color : #fff;
+  --color-hading : #253237;
+  --border-color : #d6d6d6d5;
+}
+
+.top_header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.top_header .logo{
+    width: 160px;
+}
+
+.top_header .search-box{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    background: var(--bg-color);
+    border-radius: 30px;
+    border: 1px solid var(--main-color);
+}
+
+.top_header .search-box #search{
+    width: 440px;
+    height: 45px;
+    padding: 5px 15px 5px 20px;
+    background: var(--bg-color);
+    border-radius: 30px 0 0 30px;
+}
+
+.top_header .search-box button{
+    height: 45px;
+    width: 60px;
+    background: var(--main-color);
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 0 30px 30px 0;
+}
+.top_header .search-box button svg{
+    fill: var(--white-color);
+}
+
+.top_header .header-icons{
+    display: flex;
+    gap: 30px;
+}
+
+.top_header .header-icons .icon{
+    position: relative;
+    cursor: pointer;
+}
+
+.top_header .header-icons .icon svg{
+    font-size: 30px;
+}
+
+.top_header .header-icons .icon .counter{
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: var(--main-color);
+    color: var(--white-color);
+    width:20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 11px;
+    border-radius: 100%;
+}
