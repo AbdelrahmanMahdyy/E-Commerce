@@ -1,5 +1,6 @@
 import BottomHeader from "./components/header/BottomHeader"
 import TopHeader from "./components/header/TopHeader"
+import Home from "./page/Home/Home"
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <header>
       <TopHeader />
       <BottomHeader />
+      <Home />
     </header>
     </>
   )
