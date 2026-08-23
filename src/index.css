@@ -11,7 +11,7 @@
   --p_color : #7b7b7b;
   --bg-color : #f3f3f3;
   --white-color : #fff;
-  --color-hading : #253237;
+  --color-heading : #253237;
   --border-color : #d6d6d6d5;
 }
 
@@ -25,7 +25,7 @@ img{
 }
 
 h1,h2,h3,h4,h5,h6{
-  color: var(--color-hading);
+  color: var(--color-heading);
   font-family: "DM Sans", sans-serif;
 }
 
