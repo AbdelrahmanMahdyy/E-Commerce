@@ -3,13 +3,15 @@ import { FaStar } from "react-icons/fa6";
 import { FaStarHalfAlt, FaCartArrowDown, FaRegHeart, FaShare   } from "react-icons/fa";
 
 
-function Product() {
+function Product({item}) {
+
+  
   return (
     <div className='product'>
       <div className="img_product">
-        <img src="https://cdn.dummyjson.com/product-images/smartphones/iphone-x/1.webp" alt="" />
+        <img src={item.images[0]} alt="" />
       </div>
-      <p className="name_product">iphone X</p>
+      <p className="name_product">{item.title}</p>
       <div className="stars">
         <FaStar />
         <FaStar />
@@ -17,7 +19,7 @@ function Product() {
         <FaStar />
         <FaStarHalfAlt />
       </div>
-      <p className='price'><span>$ 1000</span></p>
+      <p className='price'><span>$ {item.price}</span></p>
       <div className="icons">
         <span><FaCartArrowDown /></span>
         <span><FaRegHeart /></span>

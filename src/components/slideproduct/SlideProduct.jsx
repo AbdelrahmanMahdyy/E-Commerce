@@ -1,17 +1,46 @@
 import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 
 import "./SlideProduct.css"
 import Product from './Product'
+import { Navigation, Autoplay } from 'swiper/modules';
 
-function SliderProduct() {
+
+function SliderProduct({data, title, describtion}) {
+
+  
   return (
     <div className='slide_product'>
       <div className="container">
         <div className="top_slide">
-          <h2>Cell Phones</h2>
-          <p>Add bestselling product to weekly line up</p>
+          <h2>{title}</h2>
+          <p>{describtion}</p>
         </div>
-        <Product />
+        <Swiper
+        loop={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        slidesPerView={5}
+        navigation={true}
+        modules={[ Autoplay, Navigation]}
+        className="mySwiper">
+
+          {data.map((item) => {
+            return(
+              <SwiperSlide> <Product item={item} /> </SwiperSlide>
+
+            )
+          })}
+
+        </Swiper>
+
+        
       </div>
     </div>
   )

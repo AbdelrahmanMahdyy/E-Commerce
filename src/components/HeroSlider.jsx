@@ -26,9 +26,9 @@ function HeroSlider() {
 
           <SwiperSlide>
             <div className="content">
-              <h4>Intoducing the new</h4>
-              <h3>Microsoft Xbox <br />      360 Controller</h3>
-              <p>Windows Xp / 7 / 8 / 10, Ps3, Tv Box</p>
+              <h4>introducing the new</h4>
+              <h3>Microsoft Xbox <br />360 Controller Bundle</h3>
+              <p>Compatible with PC, PS3, & Android TV Box</p>
               <Link to="/" className='btn'>Shop Now</Link>
           </div>
           <img src="src\img\banner_Hero1.jpg" alt="Slider Hero 1" />
@@ -38,7 +38,7 @@ function HeroSlider() {
 
           <SwiperSlide>
             <div className="content">
-              <h4>Intoducing the new</h4>
+              <h4>introducing the new</h4>
               <h3>Wireless Smart Speaker /<br />Bluetooth Desktop Speaker</h3>
               <p>Compatible with iOS, Android, Windows & TV Box</p>
               <Link to="/" className='btn'>Shop Now</Link>
@@ -50,7 +50,7 @@ function HeroSlider() {
 
           <SwiperSlide>
             <div className="content">
-              <h4>Intoducing the new</h4>
+              <h4>introducing the new</h4>
               <h3>Portable MP3 Music Player /<br />Digital Audio Player</h3>
               <p>High-Fidelity Audio | FM Radio | Long Battery Life</p>
               <Link to="/" className='btn'>Shop Now</Link>
