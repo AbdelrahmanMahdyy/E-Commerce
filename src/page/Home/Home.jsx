@@ -11,7 +11,7 @@ const categories = [
   "sunglasses",
   "sports-accessories"
 ]
-const categoryDescriptions = {
+export const categoryDescriptions = {
   "smartphones": "Top-rated smartphones designed for performance and connection.",
   "mobile-accessories": "Must-have accessories to power up and protect your devices.",
   "laptops": "Powerful laptops built for work, creativity, and everything in between.",
@@ -48,8 +48,6 @@ function Home() {
     }
     fetchProducts()
   },[])
-
-console.log(categories);
 
   return (
     <div>

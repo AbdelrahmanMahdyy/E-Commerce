@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom"
 import BottomHeader from "./components/header/BottomHeader"
 import TopHeader from "./components/header/TopHeader"
 import Home from "./page/Home/Home"
-import ProductDetails from "./page/ProductDetails"
+import ProductDetails from "./page/ProductDetails/ProductDetails"
 
 
 function App() {

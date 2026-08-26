@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaStar } from "react-icons/fa6";
-import { FaStarHalfAlt, FaCartArrowDown, FaRegHeart, FaShare   } from "react-icons/fa";
+import { FaStarHalfAlt, FaCartArrowDown, FaRegHeart, FaShare } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 
