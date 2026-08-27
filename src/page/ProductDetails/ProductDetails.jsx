@@ -12,6 +12,8 @@ import "./ProductDetails.css";
 import Product from "../../components/slideproduct/Product";
 import SliderProduct from "../../components/slideproduct/SlideProduct";
 import { categoryDescriptions } from "../Home/Home";
+import ProductDetailsLoading from "./ProductDetailsLoading";
+import SlideProductLoading from "../../components/slideproduct/SlideProductLoading";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -46,7 +48,7 @@ function ProductDetails() {
       .finally(() => setLoadingRelatedProducts(false));
   }, [product?.category]);
 
-  if (loading) return <p>Loading ....</p>;
+  if (loading) return <ProductDetailsLoading />;
   if (!product) return <p>Product Not Found</p>;
 
   const handleImgClick = (img) => {
@@ -64,12 +66,14 @@ function ProductDetails() {
 
             <div className="small_img">
               {product.images.map((img, index) => (
-                <img
-                  onClick={() => handleImgClick(img)}
-                  key={index}
-                  src={img}
-                  alt={product.title}
-                />
+                <div className="all_small_images">
+                  <img
+                    onClick={() => handleImgClick(img)}
+                    key={index}
+                    src={img}
+                    alt={product.title}
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -111,7 +115,7 @@ function ProductDetails() {
       </div>
 
       {loadingRelatedProducts ? (
-        <p>Loading ....</p>
+        <SlideProductLoading />
       ) : (
         <SliderProduct
           data={relatedProducts}

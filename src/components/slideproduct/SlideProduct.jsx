@@ -10,7 +10,7 @@ import Product from './Product'
 import { Navigation, Autoplay } from 'swiper/modules';
 
 
-function SliderProduct({data, title, describtion}) {
+function SliderProduct({data, title, description}) {
 
   
   return (
@@ -18,7 +18,7 @@ function SliderProduct({data, title, describtion}) {
       <div className="container">
         <div className="top_slide">
           <h2>{title}</h2>
-          <p>{describtion}</p>
+          <p>{description}</p>
         </div>
         <Swiper
         loop={true}

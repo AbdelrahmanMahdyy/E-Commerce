@@ -1,7 +1,8 @@
-import HeroSlider from '../../components/HeroSlider'
-import React, { useEffect, useState } from 'react' ;
-import './Home.css'
-import SlideProduct from '../../components/slideproduct/SlideProduct';
+import HeroSlider from "../../components/HeroSlider";
+import React, { useEffect, useState } from "react";
+import "./Home.css";
+import SlideProduct from "../../components/slideproduct/SlideProduct";
+import SlideProductLoading from "../../components/slideproduct/SlideProductLoading";
 
 const categories = [
   "smartphones",
@@ -9,58 +10,66 @@ const categories = [
   "laptops",
   "tablets",
   "sunglasses",
-  "sports-accessories"
-]
+  "sports-accessories",
+];
 export const categoryDescriptions = {
-  "smartphones": "Top-rated smartphones designed for performance and connection.",
-  "mobile-accessories": "Must-have accessories to power up and protect your devices.",
-  "laptops": "Powerful laptops built for work, creativity, and everything in between.",
-  "tablets": "Sleek, portable tablets for browsing, streaming, and getting things done.",
-  "sunglasses": "Stylish sunglasses that combine comfort with everyday protection.",
-  "sports-accessories": "Gear up with accessories built for performance and active living."
-}
+  smartphones: "Top-rated smartphones designed for performance and connection.",
+  "mobile-accessories":
+    "Must-have accessories to power up and protect your devices.",
+  laptops:
+    "Powerful laptops built for work, creativity, and everything in between.",
+  tablets:
+    "Sleek, portable tablets for browsing, streaming, and getting things done.",
+  sunglasses:
+    "Stylish sunglasses that combine comfort with everyday protection.",
+  "sports-accessories":
+    "Gear up with accessories built for performance and active living.",
+};
 
 function Home() {
+  const [products, setProducts] = useState({});
 
-  const [products, setProducts] = useState({})
+  const [loading, setLoading] = useState(true);
 
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() =>{
-    const fetchProducts = async () =>{
-      try{
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
         const results = await Promise.all(
-          categories.map( async (category) =>{
-            const res = await fetch(`https://dummyjson.com/products/category/${category}`);
+          categories.map(async (category) => {
+            const res = await fetch(
+              `https://dummyjson.com/products/category/${category}`,
+            );
             const data = await res.json();
-            return {[category] : data.products}
-          })
-        )
+            return { [category]: data.products };
+          }),
+        );
         const productsData = Object.assign({}, ...results);
-        setProducts(productsData)
-
-
+        setProducts(productsData);
       } catch (error) {
-        console.error("Error Fetching", error)
+        console.error("Error Fetching", error);
       } finally {
-        setLoading (false)
+        setLoading(false);
       }
-    }
-    fetchProducts()
-  },[])
+    };
+    fetchProducts();
+  }, []);
 
   return (
     <div>
       <HeroSlider />
 
-      { loading ? (
-        <p>Loading ....</p>
-      ) : (
-        categories.map((category) => (
-        <SlideProduct key={category} data={products[category]} title={category.replace("-"," ")} describtion={categoryDescriptions[category]}/>
-      )))}
+      {loading
+        ? categories.map((category) => <SlideProductLoading key={category}/>)
+        : categories.map((category) => (
+            <SlideProduct
+              key={category}
+              data={products[category]}
+              title={category.replace("-", " ")}
+              description={categoryDescriptions[category]}
+            />
+          ))}
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

@@ -112,6 +112,7 @@
     border-top: 0;
     clip-path:polygon(0 0, 100% 0,100% 0, 0 0) ;
     transition: 0.3s ease-in-out;
+    z-index: 100;
 }
 .bottom_header .category_nav .category_nav_list.active{
     clip-path:polygon(0 0, 100% 0,100% 100%, 0 100%) ;
