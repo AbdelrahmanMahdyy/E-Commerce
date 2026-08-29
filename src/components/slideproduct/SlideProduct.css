@@ -28,7 +28,6 @@
 
 
 
-
 .slide_product h2{
     font-size: 30px;
     text-transform: capitalize;
@@ -107,6 +106,36 @@
     gap: 10px;
     transition: 0.3s;
 }
+
+.product.in_cart .icons .add_to_cart_btn{
+    background: var(--main-color);
+}
+
+.product.in_cart .icons .add_to_cart_btn svg{
+    fill: var(--white-color);
+}
+
+.product .cart_status{
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #253237
+}
+
+.product .cart_status svg{
+    fill: rgba(179, 207, 17, 0.773);
+}
+.product.in_cart .cart_status{
+    top: 8px;
+}
+
+
 
 .product .icons span{
     width: 40px;

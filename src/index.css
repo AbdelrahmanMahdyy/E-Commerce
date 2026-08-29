@@ -94,3 +94,7 @@ a{
         background-position: right -40px top 0;
     }
 }
+
+.in_cart{
+  border-color: red !important;
+}

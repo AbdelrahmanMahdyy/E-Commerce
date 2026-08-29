@@ -66,7 +66,7 @@ function ProductDetails() {
 
             <div className="small_img">
               {product.images.map((img, index) => (
-                <div className="all_small_images">
+                <div key={index} className="all_small_images">
                   <img
                     onClick={() => handleImgClick(img)}
                     key={index}
@@ -99,7 +99,7 @@ function ProductDetails() {
             <h5 className="stock">
               <span>Hurry Up! Only {product.stock} Products left in stock</span>
             </h5>
-            <button className="btn">
+            <button className="btn" >
               Add to Cart <FaCartArrowDown />
             </button>
             <div className="icons">

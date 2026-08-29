@@ -7,6 +7,14 @@
   --border-color : #d6d6d6d5;
 }
 
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background: var(--white-color);
+}
 .top_header .container{
     display: flex;
     align-items: center;
