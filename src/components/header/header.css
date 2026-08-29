@@ -67,6 +67,7 @@ header{
 
 .top_header .header-icons .icon svg{
     font-size: 30px;
+    fill: black;
 }
 
 .top_header .header-icons .icon .counter{

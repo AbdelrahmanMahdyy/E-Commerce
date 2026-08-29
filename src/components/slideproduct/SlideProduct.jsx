@@ -33,7 +33,7 @@ function SliderProduct({data, title, description}) {
 
           {data.map((item) => {
             return(
-              <SwiperSlide> <Product item={item} /> </SwiperSlide>
+              <SwiperSlide key={item.id}> <Product item={item} /> </SwiperSlide>
 
             )
           })}

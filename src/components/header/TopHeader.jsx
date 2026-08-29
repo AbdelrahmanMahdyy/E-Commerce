@@ -6,11 +6,11 @@ import { FaHeart } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import "./header.css";
 import { useContext } from "react";
-import { cartContext } from "../Context/CartContext";
+import { CartContext } from "../Context/CartContext";
 
 function TopHeader() {
 
-  const {cartItems} = useContext(cartContext)
+  const {cartItems} = useContext(CartContext)
   return (
     <div className="top_header">
       <div className="container">
@@ -37,8 +37,10 @@ function TopHeader() {
           </div>
 
           <div className="icon">
-            <FaShoppingCart />
-            <span className="counter">{cartItems.length}</span>
+            <Link to="/Cart">
+              <FaShoppingCart />
+              <span className="counter">{cartItems.length}</span>
+            </Link>
           </div>
         </div>
       </div>

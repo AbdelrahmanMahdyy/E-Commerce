@@ -109,6 +109,7 @@
 
 .product.in_cart .icons .add_to_cart_btn{
     background: var(--main-color);
+    pointer-events: none;
 }
 
 .product.in_cart .icons .add_to_cart_btn svg{

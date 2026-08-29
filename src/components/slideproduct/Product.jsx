@@ -10,10 +10,10 @@ import {
 } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
-import { cartContext } from "../Context/CartContext";
+import { CartContext } from "../Context/CartContext";
 
 function Product({ item }) {
-  const { cartItems, addToCart } = useContext(cartContext);
+  const { cartItems, addToCart } = useContext(CartContext);
   const isInCart = cartItems.some((i) => i.id === item.id);
 
   return (
