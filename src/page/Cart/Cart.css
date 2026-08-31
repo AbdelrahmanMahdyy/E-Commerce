@@ -167,3 +167,6 @@
     background: transparent;
     color: var(--main-color);
 }
+button{
+    cursor: pointer;
+}

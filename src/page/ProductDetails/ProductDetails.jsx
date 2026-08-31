@@ -99,7 +99,7 @@ function ProductDetails() {
             <h5 className="stock">
               <span>Hurry Up! Only {product.stock} Products left in stock</span>
             </h5>
-            <button className="btn" >
+            <button className="btn">
               Add to Cart <FaCartArrowDown />
             </button>
             <div className="icons">

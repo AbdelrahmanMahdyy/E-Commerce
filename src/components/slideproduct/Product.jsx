@@ -11,12 +11,35 @@ import {
 
 import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
+import toast from "react-hot-toast";
 
 function Product({ item }) {
   const { cartItems, addToCart } = useContext(CartContext);
   const isInCart = cartItems.some((i) => i.id === item.id);
 
+  const handleAddToCart = () =>{
+    addToCart(item)
+
+    toast.success(
+      <div className="toast-wrapper">
+        <img src={item.images[0]} alt="" className="toast-img" />
+
+        <div className="toast-content">
+          <strong>{item.title}</strong>
+          added to cart
+          <div>
+            <Link to="/cart">
+              <button className="btn">View Cart</button>
+            </Link>
+          </div>
+        </div>
+      </div>
+      , {duration : 3500}
+    )
+  }
+
   return (
+
     <div className={`product ${isInCart ? "in_cart" : ""}`}>
       <Link to={`/products/${item.id}`}>
         <span className="cart_status"><FaCheck /> In Cart</span>
@@ -36,7 +59,7 @@ function Product({ item }) {
         </p>
       </Link>
       <div className="icons">
-        <span className="add_to_cart_btn" onClick={() => addToCart(item)}>
+        <span className="add_to_cart_btn" onClick={handleAddToCart}>
           <FaCartArrowDown />
         </span>
         <span>

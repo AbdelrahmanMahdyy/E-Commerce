@@ -99,3 +99,43 @@ a{
 .in_cart{
   border-color: red !important;
 }
+
+button{
+  cursor: pointer;
+}
+
+
+/* Toast */
+
+.toast-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 300px;
+  max-width: 300px;
+}
+.toast-img{
+  width: auto;
+  height: 50px;
+  object-fit: cover;
+}
+.toast-content{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.toast-content strong{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical
+}
+
+.toast-content btn {
+  margin-top: 5px;
+  font-size: 13px;
+}

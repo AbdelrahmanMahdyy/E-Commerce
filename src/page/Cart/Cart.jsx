@@ -5,10 +5,10 @@ import { IoTrashOutline } from "react-icons/io5";
 import "./Cart.css";
 
 function Cart() {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, increaseQuantity, decreaseQuantity, removeFromCart } = useContext(CartContext);
   console.log(cartItems);
 
-  const total = cartItems.reduce((acc, item) => acc + item.price, 0);
+  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
     <div className="checkout">
@@ -29,14 +29,14 @@ function Cart() {
                     <h4>{item.title}</h4>
                     <p className="price_item">$ {item.price}</p>
                     <div className="quantity_control">
-                      <button>-</button>
-                      <span className="quantity">1</span>
-                      <button>+</button>
+                      <button onClick={() => decreaseQuantity(item.id)}>-</button>
+                      <span className="quantity">{item.quantity}</span>
+                      <button onClick={() => increaseQuantity(item.id)}>+</button>
                     </div>
                   </div>
                 </div>
                 <button className="delete_item">
-                  <IoTrashOutline />
+                  <IoTrashOutline onClick={() => removeFromCart(item.id)}/>
                 </button>
               </div>
             ))
