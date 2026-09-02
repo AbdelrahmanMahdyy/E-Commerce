@@ -97,7 +97,7 @@ a{
 }
 
 .in_cart{
-  border-color: red !important;
+  border-color: var(--main-color) !important;
 }
 
 button{

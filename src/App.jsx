@@ -5,6 +5,7 @@ import Home from "./page/Home/Home"
 import ProductDetails from "./page/ProductDetails/ProductDetails"
 import Cart from "./page/Cart/Cart"
 import { Toaster } from "react-hot-toast"
+import ScrollToTop from "./components/ScrollToTop"
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
         padding : '14px'
       }
     }}/>
-
+    <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/Cart" element={<Cart />} />
